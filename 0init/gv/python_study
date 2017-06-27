@@ -1,0 +1,57 @@
+#http://www.jianshu.com/p/e44885a777f0
+#http://www.jianshu.com/p/5b02445eca1d
+digraph DiarilyPlanRun{
+label = "DiarilyPlanRun"
+/*
+#PlanList	cluster0
+#hswork	cluster1
+#grapthviz	cluster2
+#python	cluster3
+#numpy	cluster4
+#stock	cluster5
+*/
+
+#PlanList
+subgraph cluster0{
+	label="#PlanListMonthly"
+	#PlanList [shape=record,label="{<g> grapthviz|<h> hswork}"]
+	grapthviz
+	hswork
+}
+#hswork
+subgraph cluster1{
+	label="#hswork"
+	testing
+	AutoTest
+	Sys_Study
+	vocational
+	Teaching
+}
+
+#grapthviz
+subgraph cluster2{
+	label="#grapthviz"
+	python_study
+	syntax_study
+}
+#python
+subgraph cluster3{
+	label="#python"
+}
+#numpy
+subgraph cluster4{
+	label="#numpy"
+}
+#stock
+subgraph cluster5{
+	label="#stock"
+}
+
+#20170627
+hswork->testing	[dir=both,label="20170627|20170627"]#start_date|#end_date
+hswork->Teaching	[dir=both,label="20170627|20170627"]
+
+
+grapthviz->syntax_study	[label="20170627"]#start_date
+
+}
